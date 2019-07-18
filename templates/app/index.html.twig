@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Select2 Form Examples{% endblock %}
+
+{% block body %}
+
+    <div class="example-wrapper">
+        <h1>Select2 Form Examples</h1>
+        <a href="{{ path('app_country_autocomplete') }}">JSON</a>
+
+        <ul>
+            {% for form in forms %}
+                <li><a href="{{ path('app_show_form', {formClass: form}) }}">{{ form }}</a> </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+    <div id="test">test</div>
+{% endblock %}
+
