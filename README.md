@@ -83,11 +83,19 @@ Now we've got a basic website with an entity, and we want to create some pages a
 
 ## Heroku
 
-Add node to buildpack
-Add Sentry to make your life easier!
+Initialize heroku and add a database
 
     heroku init
+    heroku addons:create heroku-postgresql:hobby-dev
+
+Add node to buildpack
+
+    heroku buildpacks:add heroku/nodejs
     git push heroku master  
+    
+Add Sentry to make your life easier!
+
+
       
 
 
