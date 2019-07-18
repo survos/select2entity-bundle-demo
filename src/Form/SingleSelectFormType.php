@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Country;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Tetranz\Select2EntityBundle\Form\Type\Select2EntityType;
@@ -49,6 +50,11 @@ class SingleSelectFormType extends AbstractType
                 'attr' => [
                     'class' => 'js-select2'
                 ]
+            ])
+
+            ->add('dummy', TextType::class, [
+                'required' => false,
+                'label' => "Next field"
             ])
 
         ;

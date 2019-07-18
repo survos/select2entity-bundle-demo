@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AppController extends AbstractController
 {
     /**
-     * @Route("/", name="app")
+     * @Route("/index", name="app")
      */
     public function index()
     {
@@ -26,10 +26,12 @@ class AppController extends AbstractController
     }
 
     /**
-     * @Route("/form/{formClass}", name="app_show_form")
+     * @Route("/", name="home")
+     * @Route("/form/", name="app_show_form")
      */
-    public function showForm(Request $request, $formClass)
+    public function showForm(Request $request)
     {
+        $formClass = $request->get('formClass',SingleSelectFormType::class);
         $defaults = [];
         $form = $this->createForm($formClass, $defaults);
 
