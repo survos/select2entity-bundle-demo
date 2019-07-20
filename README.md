@@ -15,9 +15,9 @@ See this in action on heroku, at
 ### Run the demo locally
 
 ```bash
-git clone git@github.com:survos/select2entity-bundle-demo.git sel2-demo
-cd sel2-demo 
+git clone git@github.com:survos/select2entity-bundle-demo.git sel2-demo && cd sel2-demo 
 composer install
+bin/console doctrine:schema:update --force && bin/console doctrine:fixtures:load
 yarn install
 yarn run encore dev
 symfony serve
