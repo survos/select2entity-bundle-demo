@@ -10,6 +10,7 @@ See this in action on heroku, at
 * composer
 * PHP 7.1+
 * yarn
+* Symfony Server (or another web server)
 
 ### Setup
 
@@ -177,6 +178,7 @@ Of course, you need a route to land on, then you'll instanciate the form and sen
      */
     public function showForm(Request $request)
     {
+        $defaults = [];
         $form = $this->createForm(\App\Form\SingleSelectFormType, $defaults);
 
         return $this->render('app/showForm.html.twig', [
