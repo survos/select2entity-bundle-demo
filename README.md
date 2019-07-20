@@ -53,10 +53,6 @@ Loading the database is trivial,
 ```
 
 
-This helper bundle gives us a basic landing page with some menus.
-
-    composer require survos/landing-bundle
-
 It relies on bootstrap and jquery, loaded via Webpack Encore.  Although this is more setup than simply loading those libraries from a CDN, it is also a best practice and more representative of a real-world application.
 
     composer symfony/webpack-encore-bundle && yarn install
@@ -73,12 +69,133 @@ require('jquery');
 require('bootstrap');
 ```
 
-## Finally, select2Bundle
+## Landing Bundle
+
+This helper bundle gives us a basic landing page, a base that loads the assets, and some menus.
+
+    composer require survos/landing-bundle
+    
+Replace base.html.twig so that it extends the base from the landing bundle.  This will load the css and javascript from the compiled webpack.
+
+echo '{% extends "@SurvosLanding/public_base.html.twig" %}' >templates/base.html.twig
+
+
+## Finally, start using select2EntitiesBundle
 
 Now we've got a basic website with an entity, and we want to create some pages and forms.
 
-    bin/console make:controller AppController
+    composer req tetranz/select2entity-bundle
+    
+Update twig.yaml to include rendering select2 
+
+```yaml
+    form_themes:
+        - 'bootstrap_4_horizontal_layout.html.twig'
+        - '@TetranzSelect2Entity/Form/fields.html.twig'    
+```    
+
+### Create a Form and Add the country field    
+
+```bash
+
     bin/console make:form SingleSelectForm
+
+```
+Open up your form and configure the field, e.g.
+
+```php
+            ->add('single_country', Select2EntityType::class, [
+                'multiple' => false,
+                'remote_route' => 'app_country_autocomplete',
+                'class' => Country::class,
+                'primary_key' => 'id',
+                'text_property' => 'name',
+                'minimum_input_length' => 1,
+                'cache' => 0,
+                'page_limit' => 10,
+                'required' => false,
+                'allow_clear' => true,
+                'language' => 'en',
+                'placeholder' => 'Select A Single Country',
+                'attr' => [
+                    'class' => 'js-select2'
+                ]
+            ])
+```
+
+
+The attr.class is very important.  Since all the configuration is done in PHP and rendered as data-* attributes, the javascript is trivial. Simply initialize select2 on the appropriate elements.
+
+Add to app.js
+
+```js
+    $('.js-select2').select2({});
+
+```
+
+### Create and Configure the Controller
+
+```bash
+    bin/console make:controller AppController
+```
+
+
+The autocomplete ajax call is a simple query, using the repository created in make:entity.
+
+```php
+
+// add to AppController.php
+
+    /**
+     * @Route("/country_autocomplete.json", name="app_country_autocomplete")
+     */
+    public function CountryAutocomplete(Request $request, CountryRepository $repository)
+    {
+        $q = $request->get('q');
+        $matches = $repository->createQueryBuilder('c')
+            ->where("c.name LIKE :searchString")
+            ->setParameter('searchString', $q . '%')
+            ->getQuery()
+            ->getResult();
+
+        $data = array_map(function(Country $country) use ($request) {
+            return ['id' => $country->getId(), 'text' => $country->getName()];
+        }, $matches);
+        $data = array_values($data);
+
+        $data = ['results' => $data];
+        return new JsonResponse($data);
+    }
+```
+
+Of course, you need a route to land on, then you'll instanciate the form and send it to be rendered in a twig template.  
+
+```php
+// add to AppController.php
+    /**
+     * @Route("/", name="home")
+     */
+    public function showForm(Request $request)
+    {
+        $form = $this->createForm(\App\Form\SingleSelectFormType, $defaults);
+
+        return $this->render('app/showForm.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
+```
+
+## Compile the assets and run
+
+Symfony is deprecating the use of WebServerBundle in favor of the Symfony Server (https://symfony.com/doc/current/setup/symfony_server.html).
+
+```bash
+yarn run encore dev
+symfony serve
+```
+
+Open the web page, and you should now have a select2 form.
+
 
 
 ## Heroku
