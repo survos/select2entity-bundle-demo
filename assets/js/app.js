@@ -14,20 +14,6 @@ require('select2');
 
 require('../css/app.css');
 
-console.log("Init select2");
-
 $('.js-select2').select2({});
 
 
-var tahsilatData = [{
-    id: "A",
-    text: 'AÇIK TAHSİLAT'
-}, {
-    id: "B",
-    text: 'SADECE BLOKE KREDİ KARTI İLE'
-}];
-
-$('#test').select2({
-    placeholder: "Try this",
-    data: tahsilatData,
-});
