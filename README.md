@@ -12,6 +12,19 @@ See this in action on heroku, at
 * yarn
 * Symfony Server (or another web server)
 
+### Run the demo locally
+
+```bash
+git clone git@github.com:survos/select2entity-bundle-demo.git sel2-demo
+cd sel2-demo 
+composer install
+yarn install
+yarn run encore dev
+symfony serve
+```
+
+
+
 ### Setup
 
 These are the steps to recreate this demo locally.  We'll use orm-fixtures to load the database
@@ -60,14 +73,31 @@ It relies on bootstrap and jquery, loaded via Webpack Encore.  Although this is 
     
 Get bootstrap and jquery
 
-    yarn add bootstrap jquery popper.js
+    yarn add bootstrap jquery popper.js select2@4.0.5
     
-and add them to app.js to make them global
+and add them to app.js and app.css to make them global.  The select2 configuration is all done in PHP (via data-* attributes) so we will simpmly initialize the appropriate elements here.
 
 ```javascript
 // app.js
 require('jquery');
 require('bootstrap');
+
+// initialize the select2 elements.
+$('.js-select')
+````
+
+```css
+/* assets/app.css */
+@import "~select2/dist/css/select2.min.css";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+```
+
+Compile the assets
+
+```bash
+yarn run encore dev
+```
+
 ```
 
 ## Landing Bundle
@@ -125,13 +155,7 @@ Open up your form and configure the field, e.g.
 ```
 
 
-The attr.class is very important.  Since all the configuration is done in PHP and rendered as data-* attributes, the javascript is trivial. Simply initialize select2 on the appropriate elements.
-
-Add to app.js
-
-```js
-    $('.js-select2').select2({});
-
+The 'class' in 'attr' is very important, since we use that in app.js to initialize.
 ```
 
 ### Create and Configure the Controller
