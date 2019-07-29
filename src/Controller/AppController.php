@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Country;
+use App\Form\AddNewCountryFormType;
 use App\Form\SingleSelectFormType;
 use App\Repository\CountryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -18,8 +19,10 @@ class AppController extends AbstractController
     public function index()
     {
         $forms = [
-            SingleSelectFormType::class
+            SingleSelectFormType::class,
+            AddNewCountryFormType::class
         ];
+
         return $this->render('app/index.html.twig', [
             'forms' => $forms
         ]);
@@ -31,7 +34,30 @@ class AppController extends AbstractController
      */
     public function showForm(Request $request)
     {
-        $formClass = $request->get('formClass',SingleSelectFormType::class);
+        $formClass = $request->get('formClass',\App\Form\SingleSelectFormType::class);
+        $defaults = [];
+        $form = $this->createForm($formClass, $defaults);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            dump($request, $form->all());
+        }
+
+        $reflector = new \ReflectionClass($formClass);
+
+        return $this->render('app/showForm.html.twig', [
+            'form' => $form->createView(),
+            'formClass' => $formClass,
+            'source' => file_get_contents($reflector->getFileName())
+        ]);
+    }
+
+    /**
+     * @Route("/add_country_form/", name="app_add_country_form")
+     */
+    public function addCountryForm(Request $request)
+    {
+        $formClass = $request->get('formClass',\App\Form\SingleSelectFormType::class);
         $defaults = [];
         $form = $this->createForm($formClass, $defaults);
 

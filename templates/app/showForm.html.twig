@@ -5,7 +5,17 @@
 {% block body %}
 
     <div class="container">
-        {{ form(form) }}
+
+        <h1>{{ formClass }}</h1>
+        <div class="row">
+            <div class="col-md-6">
+                {{ form(form) }}
+            </div>
+            <div class="col-md-6">
+                <pre>{{ source }}</pre>
+            </div>
+
+        </div>
     </div>
 
 {% endblock %}
