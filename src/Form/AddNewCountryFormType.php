@@ -21,8 +21,7 @@ class AddNewCountryFormType extends AbstractType
                 'primary_key' => 'id',
                 'text_property' => 'name',
                 'cache' => 0,
-                'page
-                _limit' => 10,
+                'page_limit' => 10,
                 'required' => false,
                 'allow_clear' => true,
                 'language' => 'en',

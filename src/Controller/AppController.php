@@ -37,10 +37,15 @@ class AppController extends AbstractController
         $formClass = $request->get('formClass',\App\Form\SingleSelectFormType::class);
         $defaults = [];
         $form = $this->createForm($formClass, $defaults);
+        $errorMessage = '';
 
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            dump($request, $form->all());
+        try {
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {
+                dump($request, $form->all());
+            }
+        } catch (\Exception $e) {
+            $errorMessage = $e->getMessage();
         }
 
         $reflector = new \ReflectionClass($formClass);
@@ -48,7 +53,8 @@ class AppController extends AbstractController
         return $this->render('app/showForm.html.twig', [
             'form' => $form->createView(),
             'formClass' => $formClass,
-            'source' => file_get_contents($reflector->getFileName())
+            'source' => file_get_contents($reflector->getFileName()),
+            'errorMessage' => $errorMessage
         ]);
     }
 

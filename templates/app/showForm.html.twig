@@ -7,6 +7,9 @@
     <div class="container">
 
         <h1>{{ formClass }}</h1>
+        {% if errorMessage %}
+        <div class="text-danger">{{ errorMessage }}</div>
+        {% endif %}
         <div class="row">
             <div class="col-md-6">
                 {{ form(form) }}
