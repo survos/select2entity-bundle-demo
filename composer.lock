@@ -2114,16 +2114,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/survos/LandingBundle.git",
-                "reference": "edb84a2383e52836c3035ec101526a8c34b11414"
+                "reference": "d8cd05c668efab4c5cd1504b3b123da13cf13479"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/survos/LandingBundle/zipball/edb84a2383e52836c3035ec101526a8c34b11414",
-                "reference": "edb84a2383e52836c3035ec101526a8c34b11414",
+                "url": "https://api.github.com/repos/survos/LandingBundle/zipball/d8cd05c668efab4c5cd1504b3b123da13cf13479",
+                "reference": "d8cd05c668efab4c5cd1504b3b123da13cf13479",
                 "shasum": ""
             },
             "require": {
                 "knplabs/knp-menu-bundle": "^2.0",
+                "symfony/webpack-encore-bundle": "^1.6",
                 "twig/twig": "^2.5|^3.0"
             },
             "type": "symfony-bundle",
@@ -2148,7 +2149,7 @@
                 }
             ],
             "description": "Add a landing to a Symfony4 application",
-            "time": "2019-07-18T11:28:50+00:00"
+            "time": "2019-07-29T17:15:28+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
