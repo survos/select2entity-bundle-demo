@@ -6,7 +6,8 @@
 
     <div class="container">
 
-        <h1>{{ formClass }}</h1>
+        <h2>{{ formClass }}</h2>
+        <a href="{{ path('app_index') }}">List All Examples</a>
         {% if errorMessage %}
         <div class="text-danger">{{ errorMessage }}</div>
         {% endif %}
