@@ -23,11 +23,10 @@ yarn run encore dev
 symfony serve
 ```
 
-
-
 ### Setup
 
-These are the steps to recreate this demo locally.  We'll use orm-fixtures to load the database
+These are the steps to recreate this demo locally.  We'll use orm-fixtures to load the database.  
+LandingBundle makes it easy to create a menu
 
     composer create-project symfony/website-skeleton select2-demo
     cd select2-demo
@@ -69,7 +68,7 @@ Loading the database is trivial,
 
 It relies on bootstrap and jquery, loaded via Webpack Encore.  Although this is more setup than simply loading those libraries from a CDN, it is also a best practice and more representative of a real-world application.
 
-    composer symfony/webpack-encore-bundle && yarn install
+    composer req symfony/webpack-encore-bundle && yarn install
     
 Get bootstrap and jquery
 
@@ -228,7 +227,7 @@ Open the web page, and you should now have a select2 form.
 
 Initialize heroku and add a database
 
-    heroku init
+    heroku create <name>
     heroku addons:create heroku-postgresql:hobby-dev
 
 Add node to buildpack

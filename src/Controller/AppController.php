@@ -42,6 +42,7 @@ class AppController extends AbstractController
         try {
             $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {
+
                 dump($request, $form->all());
             }
         } catch (\Exception $e) {
