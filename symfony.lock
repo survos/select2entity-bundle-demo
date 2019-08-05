@@ -143,9 +143,6 @@
             "config/packages/sensio_framework_extra.yaml"
         ]
     },
-    "survos/landing-bundle": {
-        "version": "dev-master"
-    },
     "swiftmailer/swiftmailer": {
         "version": "v6.2.1"
     },
