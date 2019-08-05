@@ -30,7 +30,10 @@ class AddNewCountryFormType extends AbstractType
                     'class' => 'js-select2'
                 ],
                 'allow_add' => [
-                    'enabled' => true
+                    'enabled' => true,
+                    'new_tag_text' => ' (NEW)',
+                    'new_tag_prefix' => '__',
+                    'tag_separators' => '[ ";" ]'
                 ]
             ])
             ->add('submit', SubmitType::class)
