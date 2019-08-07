@@ -27,7 +27,7 @@ class AddNewCountryFormType extends AbstractType
                 'language' => 'en',
                 'placeholder' => 'Select or Add Countries',
                 'attr' => [
-                    'class' => 'js-select2'
+                    // 'class' => 'js-select2'
                 ],
                 'allow_add' => [
                     'enabled' => true,

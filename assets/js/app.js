@@ -16,6 +16,6 @@ require('../../vendor/tetranz/select2entity-bundle/Resources/public/js/select2en
 
 require('../css/app.css');
 
-$('.js-select2').select2({});
+// $('.js-select2').select2({});
 
 

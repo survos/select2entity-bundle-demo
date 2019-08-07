@@ -28,9 +28,6 @@ class SingleSelectFormType extends AbstractType
                 'allow_clear' => true,
                 'language' => 'en',
                 'placeholder' => 'Select A Single Country',
-                'attr' => [
-                    'class' => 'js-select2'
-                ]
             ])
 
             ->add('countries', Select2EntityType::class, [
@@ -48,7 +45,7 @@ class SingleSelectFormType extends AbstractType
                 'language' => 'en',
                 'placeholder' => 'Select Multiple Countries',
                 'attr' => [
-                    'class' => 'js-select2'
+                    // 'class' => 'js-select2'
                 ]
             ])
 
