@@ -8,12 +8,44 @@
 
         <h2>{{ formClass }}</h2>
         <a href="{{ path('app_index') }}">List All Examples</a>
+
+
         {% if errorMessage %}
         <div class="text-danger">{{ errorMessage }}</div>
         {% endif %}
         <div class="row">
             <div class="col-md-6">
-                {{ form(form) }}
+                {{ form_errors(form) }}
+                {{ form_start(form) }}
+                {{ form_rest(form) }}
+                <input class="btn btn-success" type="submit" value="Submit Form"/> 
+                {{ form_end(form) }}
+
+                <table class="table table-bordered">
+                    <thead>
+
+                    </thead>
+                    <tbody>
+                    {% for f in results %}
+                    <tr>
+                        <td>{{ f.name }}</td>
+                        <td>
+
+                    {% set data = f.data %}
+                    {% if data is iterable %}
+                        {% for ff in data %}
+                            {{ ff }}
+                        {% endfor %}
+                    {% else %}
+                        {{ data }}
+                    {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+
             </div>
             <div class="col-md-6">
                 <pre>{{ source }}</pre>

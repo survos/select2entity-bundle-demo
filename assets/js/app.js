@@ -12,6 +12,8 @@ const $ = require('jquery');
 require('bootstrap');
 require('select2');
 
+require('../../vendor/tetranz/select2entity-bundle/Resources/public/js/select2entity.js');
+
 require('../css/app.css');
 
 $('.js-select2').select2({});

@@ -80,6 +80,7 @@ and add them to app.js and app.css to make them global.  The select2 configurati
 // app.js
 require('jquery');
 require('bootstrap');
+require('../../vendor/tetranz/select2entity-bundle/Resources/public/js/select2entity.js');
 
 // initialize the select2 elements.
 $('.js-select')
@@ -91,7 +92,14 @@ $('.js-select')
 @import "~bootstrap/dist/css/bootstrap.min.css";
 ```
 
-Compile the assets
+Compile the assets.  First allow a global jQuery object
+
+```js
+
+    // uncomment if you're having problems with a jQuery plugin
+    .autoProvidejQuery()
+
+```
 
 ```bash
 yarn run encore dev

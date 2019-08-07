@@ -38,13 +38,14 @@ class AppController extends AbstractController
         $defaults = [];
         $form = $this->createForm($formClass, $defaults);
         $errorMessage = '';
+        $results = [];
 
-        try {
             $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {
-
-                dump($request, $form->all());
+                $results = $form->all();
+                // dump($request, $form->all());
             }
+        try {
         } catch (\Exception $e) {
             $errorMessage = $e->getMessage();
         }
@@ -53,6 +54,7 @@ class AppController extends AbstractController
 
         return $this->render('app/showForm.html.twig', [
             'form' => $form->createView(),
+            'results' => $results,
             'formClass' => $formClass,
             'source' => file_get_contents($reflector->getFileName()),
             'errorMessage' => $errorMessage

@@ -36,7 +36,6 @@ class AddNewCountryFormType extends AbstractType
                     'tag_separators' => '[ ";" ]'
                 ]
             ])
-            ->add('submit', SubmitType::class)
         ;
     }
 

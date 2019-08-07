@@ -54,4 +54,9 @@ class Country
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return sprintf("%d %s %s", $this->getId(), $this->alpha2, $this->getName());
+    }
 }
