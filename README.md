@@ -105,8 +105,6 @@ Compile the assets.  First allow a global jQuery object
 yarn run encore dev
 ```
 
-```
-
 ## Landing Bundle
 
 This helper bundle gives us a basic landing page, a base that loads the assets, and some menus.
