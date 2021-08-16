@@ -28,6 +28,10 @@ symfony serve
 These are the steps to recreate this demo locally.  We'll use orm-fixtures to load the database.  
 LandingBundle makes it easy to create a menu
 
+    DIR=select-demo && mkdir $DIR && cd $DIR && symfony new --full . --no-git 
+    
+
+
     composer create-project symfony/website-skeleton select2-demo
     cd select2-demo
     
