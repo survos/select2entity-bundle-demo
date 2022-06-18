@@ -2,7 +2,7 @@
     "type": "project",
     "license": "proprietary",
     "require": {
-        "php": ">= 7.4",
+        "php": ">= 8.1",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "doctrine/annotations": "^1.0",
@@ -93,7 +93,19 @@
     "extra": {
         "symfony": {
             "allow-contrib": true,
-            "require": "^6.0"
+            "require": "^5.0"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": {
+        "admin_lte_bundle": {
+            "type": "vcs",
+            "url": "git@github.com:tacman/AdminLTEBundle.git"
+        },
+        "survos_base_bundle": {
+            "type": "vcs",
+            "url": "git@github.com:survos/BaseBundle.git"
         }
     }
 }
