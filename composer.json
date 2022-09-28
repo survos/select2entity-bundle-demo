@@ -88,6 +88,9 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "compile": [
+            "bin/console doctrine:fixtures:load -n"
         ]
     },
     "conflict": {
