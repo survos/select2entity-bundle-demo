@@ -9,11 +9,12 @@
 import './styles/app.css';
 
 require('jquery');
+require('select2');
 require('bootstrap');
 require('../vendor/tetranz/select2entity-bundle/Resources/public/js/select2entity.js');
 
 // initialize the select2 elements.
-$('.js-select')
+// $('.js-select')
 
 
 // start the Stimulus application

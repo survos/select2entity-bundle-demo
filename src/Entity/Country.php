@@ -6,7 +6,7 @@ use App\Repository\CountryRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CountryRepository::class)]
-class Country
+class Country implements \Stringable
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -46,5 +46,10 @@ class Country
         $this->alpha2 = $alpha2;
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->getName();
     }
 }
