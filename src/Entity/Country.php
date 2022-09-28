@@ -2,29 +2,22 @@
 
 namespace App\Entity;
 
+use App\Repository\CountryRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass="App\Repository\CountryRepository")
- */
+#[ORM\Entity(repositoryClass: CountryRepository::class)]
 class Country
 {
-    /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
-     */
-    private $id;
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    private ?int $id = null;
 
-    /**
-     * @ORM\Column(type="string", length=60)
-     */
-    private $name;
+    #[ORM\Column(length: 55)]
+    private ?string $name = null;
 
-    /**
-     * @ORM\Column(type="string", length=2)
-     */
-    private $alpha2;
+    #[ORM\Column(length: 2)]
+    private ?string $alpha2 = null;
 
     public function getId(): ?int
     {
@@ -53,10 +46,5 @@ class Country
         $this->alpha2 = $alpha2;
 
         return $this;
-    }
-
-    public function __toString()
-    {
-        return sprintf("%d %s %s", $this->getId(), $this->alpha2, $this->getName());
     }
 }
