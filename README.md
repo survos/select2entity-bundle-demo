@@ -30,6 +30,7 @@ LandingBundle makes it easy to create a menu
 
 ```bash
 DIR=select-demo && mkdir $DIR && cd $DIR && symfony new --webapp . 
+composer req api
 ```
     
 We need an entity class, we're going to use Country, and populate the table using Symfony's intl component.  We'll need a database, if you're running locally and have sqlite installed, use that.  Or any database that Doctrine supports.  Later we'll move this to postgres for heroku.  By default, Symfony assumes you're using a mysql database, so change it in .env.local
@@ -37,6 +38,18 @@ We need an entity class, we're going to use Country, and populate the table usin
 echo "DATABASE_URL=sqlite:///%kernel.project_dir%/var/data.db" > .env.local
 
     # make the entity / repo
+
+echo "name,string,55,," | sed "s/,/\n/g"  | bin/console -a make:entity Country
+echo "alpha2,string,2,," | sed "s/,/\n/g"  | bin/console make:entity Country
+
+cat <<'EOF' | bin/console make:entity -a CountryX 
+name, string, 55, no (not nullable)
+alpha2, string, 2, no (not nullable)
+EOF
+
+
+
+
     bin/console make:entity Country
        # name, string, 55, no (not nullable)
        # alpha2, string, 2, no (not nullable)
