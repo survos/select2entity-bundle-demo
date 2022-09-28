@@ -13,9 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AppController extends AbstractController
 {
-    /**
-     * @Route("/index", name="app_index")
-     */
+    #[Route(path: '/index', name: 'app_index')]
     public function index()
     {
         $forms = [
@@ -28,13 +26,11 @@ class AppController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/", name="home")
-     * @Route("/form/", name="app_show_form")
-     */
+    #[Route(path: '/', name: 'home')]
+    #[Route(path: '/form/', name: 'app_show_form')]
     public function showForm(Request $request)
     {
-        $formClass = $request->get('formClass',\App\Form\SingleSelectFormType::class);
+        $formClass = $request->get('formClass',SingleSelectFormType::class);
         $defaults = [];
         $form = $this->createForm($formClass, $defaults);
         $errorMessage = '';
@@ -61,9 +57,7 @@ class AppController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/add_country_form/", name="app_add_country_form")
-     */
+    #[Route(path: '/add_country_form/', name: 'app_add_country_form')]
     public function addCountryForm(Request $request)
     {
         $formClass = $request->get('formClass',\App\Form\SingleSelectFormType::class);
@@ -75,9 +69,7 @@ class AppController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/country_autocomplete.json", name="app_country_autocomplete")
-     */
+    #[Route(path: '/country_autocomplete.json', name: 'app_country_autocomplete')]
     public function CountryAutocomplete(Request $request, CountryRepository $repository)
     {
         $q = $request->get('q');
@@ -87,9 +79,7 @@ class AppController extends AbstractController
             ->getQuery()
             ->getResult();
 
-        $data = array_map(function(Country $country) use ($request) {
-            return ['id' => $country->getId(), 'text' => $country->getName()];
-        }, $matches);
+        $data = array_map(fn(Country $country) => ['id' => $country->getId(), 'text' => $country->getName()], $matches);
         $data = array_values($data);
 
         $data = ['results' => $data];
