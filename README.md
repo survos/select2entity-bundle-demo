@@ -8,7 +8,7 @@ See this in action on heroku, at
 ### Requirements
 
 * composer
-* PHP 7.1+
+* PHP 8
 * yarn
 * Symfony Server (or another web server)
 
@@ -28,12 +28,9 @@ symfony serve
 These are the steps to recreate this demo locally.  We'll use orm-fixtures to load the database.  
 LandingBundle makes it easy to create a menu
 
-    DIR=select-demo && mkdir $DIR && cd $DIR && symfony new --full . --no-git 
-    
-
-
-    composer create-project symfony/website-skeleton select2-demo
-    cd select2-demo
+```bash
+DIR=select-demo && mkdir $DIR && cd $DIR && symfony new --webapp . 
+```
     
 We need an entity class, we're going to use Country, and populate the table using Symfony's intl component.  We'll need a database, if you're running locally and have sqlite installed, use that.  Or any database that Doctrine supports.  Later we'll move this to postgres for heroku.  By default, Symfony assumes you're using a mysql database, so change it in .env.local
 
@@ -54,7 +51,11 @@ echo "DATABASE_URL=sqlite:///%kernel.project_dir%/var/data.db" > .env.local
 Loading the database is trivial, 
 
 ```
-    // CountryFixtures.php
+use Symfony\Component\Intl\Countries;
+use App\Entity\Country;
+
+class CountryFixtures extends Fixture
+{
     public function load(ObjectManager $manager)
     {
         $countries = Countries::getNames();
@@ -69,14 +70,23 @@ Loading the database is trivial,
     }
 ```
 
+Load the countries
+
+```bash
+symfony console doctrine:fixtures:load -n 
+```
 
 It relies on bootstrap and jquery, loaded via Webpack Encore.  Although this is more setup than simply loading those libraries from a CDN, it is also a best practice and more representative of a real-world application.
 
-    composer req symfony/webpack-encore-bundle && yarn install
-    
+```bash
+composer req symfony/webpack-encore-bundle && yarn install
+```
+`    
 Get bootstrap and jquery
 
-    yarn add bootstrap jquery popper.js select2@4.0.5
+```bash
+yarn add bootstrap jquery select2@4.0.5
+```
     
 and add them to app.js and app.css to make them global.  The select2 configuration is all done in PHP (via data-* attributes) so we will simpmly initialize the appropriate elements here.
 
@@ -109,15 +119,15 @@ Compile the assets.  First allow a global jQuery object
 yarn run encore dev
 ```
 
-## Landing Bundle
+## Bootstrap Bundle
 
 This helper bundle gives us a basic landing page, a base that loads the assets, and some menus.
 
-    composer require survos/landing-bundle
+    composer require survos/bootstrap-bundle
     
 Replace base.html.twig so that it extends the base from the landing bundle.  This will load the css and javascript from the compiled webpack.
 
-echo '{% extends "@SurvosLanding/public_base.html.twig" %}' >templates/base.html.twig
+echo '{% extends "@SurvosBootstrap/sneat/base.html.twig" %}' >templates/base.html.twig
 
 
 ## Finally, start using select2EntitiesBundle
@@ -222,10 +232,8 @@ Of course, you need a route to land on, then you'll instanciate the form and sen
 
 ## Compile the assets and run
 
-Symfony is deprecating the use of WebServerBundle in favor of the Symfony Server (https://symfony.com/doc/current/setup/symfony_server.html).
-
 ```bash
-yarn run encore dev
+yarn  dev
 symfony serve
 ```
 
@@ -243,7 +251,7 @@ Initialize heroku and add a database
 Add node to buildpack
 
     heroku buildpacks:add heroku/nodejs
-    git push heroku master  
+    git push heroku main  
     
 Add Sentry to make your life easier!
 

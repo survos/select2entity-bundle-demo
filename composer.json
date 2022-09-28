@@ -35,7 +35,7 @@
         "symfony/twig-bundle": "^6.0",
         "symfony/validator": "^6.0",
         "symfony/web-link": "^6.0",
-        "symfony/webpack-encore-bundle": "^1.6",
+        "symfony/webpack-encore-bundle": "^1.15",
         "symfony/yaml": "^6.0",
         "tetranz/select2entity-bundle": "^3.1"
     },
