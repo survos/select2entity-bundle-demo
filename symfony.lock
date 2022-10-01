@@ -98,6 +98,12 @@
             "config/packages/sensio_framework_extra.yaml"
         ]
     },
+    "survos/core-bundle": {
+        "version": "1.2.10"
+    },
+    "survos/maker-bundle": {
+        "version": "1.2.8"
+    },
     "symfony/console": {
         "version": "6.1",
         "recipe": {

@@ -4,7 +4,6 @@ namespace App\Form;
 
 use App\Entity\Country;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Tetranz\Select2EntityBundle\Form\Type\Select2EntityType;
@@ -33,8 +32,8 @@ class AddNewCountryFormType extends AbstractType
                     'enabled' => true,
                     'new_tag_text' => ' (NEW)',
                     'new_tag_prefix' => '__',
-                    'tag_separators' => '[ ";" ]'
-                ]
+                    'tag_separators' => '[ ";" ]',
+                ],
             ])
         ;
     }

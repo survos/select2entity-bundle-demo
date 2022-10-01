@@ -4,13 +4,18 @@ namespace App\Entity;
 
 use App\Repository\CountryRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Survos\CoreBundle\Entity\RouteParametersInterface;
+use Survos\CoreBundle\Entity\RouteParametersTrait;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: CountryRepository::class)]
-class Country implements \Stringable
-{
+class Country implements \Stringable, RouteParametersInterface {
+    use RouteParametersTrait;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Core\Unique]
     private ?int $id = null;
 
     #[ORM\Column(length: 55)]
@@ -19,11 +24,17 @@ class Country implements \Stringable
     #[ORM\Column(length: 2)]
     private ?string $alpha2 = null;
 
+    public function __toString(): string
+    {
+        return $this->getName();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    #[Groups('country.read')]
     public function getName(): ?string
     {
         return $this->name;
@@ -46,10 +57,5 @@ class Country implements \Stringable
         $this->alpha2 = $alpha2;
 
         return $this;
-    }
-
-    public function __toString(): string
-    {
-        return $this->getName();
     }
 }

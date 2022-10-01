@@ -22,7 +22,7 @@ class SingleSelectFormType extends AbstractType
                 'text_property' => 'name',
                 'minimum_input_length' => 1,
                 'cache' => 0,
-//                'delay' => 100,
+                //                'delay' => 100,
                 'page_limit' => 10,
                 'required' => false,
                 'allow_clear' => true,
@@ -38,7 +38,7 @@ class SingleSelectFormType extends AbstractType
                 'text_property' => 'name',
                 'minimum_input_length' => 1,
                 'cache' => 0,
-//                'delay' => 100,
+                //                'delay' => 100,
                 'page_limit' => 10,
                 'required' => false,
                 'allow_clear' => true,
@@ -46,12 +46,12 @@ class SingleSelectFormType extends AbstractType
                 'placeholder' => 'Select Multiple Countries',
                 'attr' => [
                     // 'class' => 'js-select2'
-                ]
+                ],
             ])
 
             ->add('dummy', TextType::class, [
                 'required' => false,
-                'label' => "Next field"
+                'label' => 'Next field',
             ])
 
         ;
