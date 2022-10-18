@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c325ae28b04c85a6b38bb370993519c1",
+    "content-hash": "e63c7b0d88e63dcbd30e572a129b1dc7",
     "packages": [
         {
             "name": "api-platform/core",
@@ -2466,7 +2466,7 @@
             "dist": {
                 "type": "path",
                 "url": "//home/tac/survos/survos/packages/core-bundle",
-                "reference": "53b31405ec85fa75d50fea9506d24f481a746b6b"
+                "reference": "62c53ddef5b4d0e68de89e39e6c509293558c651"
             },
             "require": {
                 "php": "^8.1",
@@ -2478,22 +2478,22 @@
                 "twig/twig": "^3.4"
             },
             "conflict": {
-                "survos/api-grid-bundle": "<1.2.10",
-                "survos/auth-bundle": "<1.2.10",
-                "survos/barcode-bundle": "<1.2.10",
-                "survos/bootstrap-bundle": "<1.2.10",
-                "survos/crawler-bundle": "<1.2.10",
-                "survos/doc-bundle": "<1.2.10",
-                "survos/faker-bundle": "<1.2.10",
+                "survos/api-grid-bundle": "<1.2.8",
+                "survos/auth-bundle": "<1.2.8",
+                "survos/barcode-bundle": "<1.2.8",
+                "survos/bootstrap-bundle": "<1.2.8",
+                "survos/crawler-bundle": "<1.2.8",
+                "survos/doc-bundle": "<1.2.8",
+                "survos/faker-bundle": "<1.2.8",
                 "survos/first-package": "<1.2.7",
-                "survos/grid-bundle": "<1.2.10",
-                "survos/html-prettify-bundle": "<1.2.10",
-                "survos/inspection-bundle": "<1.2.10",
-                "survos/location-bundle": "<1.2.10",
-                "survos/maker-bundle": "<1.2.10",
+                "survos/grid-bundle": "<1.2.8",
+                "survos/html-prettify-bundle": "<1.2.8",
+                "survos/inspection-bundle": "<1.2.8",
+                "survos/location-bundle": "<1.2.8",
+                "survos/maker-bundle": "<1.2.8",
                 "survos/second-package": "<1.2.7",
-                "survos/tree-bundle": "<1.2.10",
-                "survos/workflow-helper-bundle": "<1.2.10"
+                "survos/tree-bundle": "<1.2.8",
+                "survos/workflow-helper-bundle": "<1.2.8"
             },
             "require-dev": {
                 "phpstan/phpstan": "^1.8",
@@ -7099,6 +7099,83 @@
             "time": "2022-05-27T16:55:36+00:00"
         },
         {
+            "name": "symfony/ux-twig-component",
+            "version": "v2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/ux-twig-component.git",
+                "reference": "877a1b479b6083472bbec6a9e7267f2cac11b5dd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/ux-twig-component/zipball/877a1b479b6083472bbec6a9e7267f2cac11b5dd",
+                "reference": "877a1b479b6083472bbec6a9e7267f2cac11b5dd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0",
+                "symfony/dependency-injection": "^5.4|^6.0",
+                "symfony/event-dispatcher": "^5.4|^6.0",
+                "symfony/property-access": "^5.4|^6.0",
+                "twig/twig": "^2.0|^3.0"
+            },
+            "conflict": {
+                "symfony/config": "<5.4.0"
+            },
+            "require-dev": {
+                "symfony/framework-bundle": "^5.4|^6.0",
+                "symfony/phpunit-bridge": "^6.0",
+                "symfony/twig-bundle": "^5.4|^6.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "thanks": {
+                    "name": "symfony/ux",
+                    "url": "https://github.com/symfony/ux"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\UX\\TwigComponent\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Twig components for Symfony",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "components",
+                "symfony-ux",
+                "twig"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/ux-twig-component/tree/v2.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-06-17T07:08:52+00:00"
+        },
+        {
             "name": "symfony/validator",
             "version": "v6.1.5",
             "source": {
@@ -8093,54 +8170,6 @@
             "time": "2022-04-28T17:58:29+00:00"
         },
         {
-            "name": "jetbrains/phpstorm-stubs",
-            "version": "v2022.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/JetBrains/phpstorm-stubs.git",
-                "reference": "01006d9854679672fc8b85c6d5063ea6f25226ac"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/01006d9854679672fc8b85c6d5063ea6f25226ac",
-                "reference": "01006d9854679672fc8b85c6d5063ea6f25226ac",
-                "shasum": ""
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "@stable",
-                "nikic/php-parser": "@stable",
-                "php": "^8.0",
-                "phpdocumentor/reflection-docblock": "@stable",
-                "phpunit/phpunit": "@stable"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "PhpStormStubsMap.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "description": "PHP runtime & extensions header files for PhpStorm",
-            "homepage": "https://www.jetbrains.com/phpstorm",
-            "keywords": [
-                "autocomplete",
-                "code",
-                "inference",
-                "inspection",
-                "jetbrains",
-                "phpstorm",
-                "stubs",
-                "type"
-            ],
-            "support": {
-                "source": "https://github.com/JetBrains/phpstorm-stubs/tree/v2022.2"
-            },
-            "time": "2022-07-25T13:18:36+00:00"
-        },
-        {
             "name": "masterminds/html5",
             "version": "2.7.6",
             "source": {
@@ -8971,120 +9000,6 @@
                 }
             ],
             "time": "2022-09-29T11:05:42+00:00"
-        },
-        {
-            "name": "roave/better-reflection",
-            "version": "5.11.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Roave/BetterReflection.git",
-                "reference": "84cdf580747c3d55238be28d5681e24e7d11e065"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Roave/BetterReflection/zipball/84cdf580747c3d55238be28d5681e24e7d11e065",
-                "reference": "84cdf580747c3d55238be28d5681e24e7d11e065",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "jetbrains/phpstorm-stubs": "2022.2",
-                "nikic/php-parser": "^4.15.1",
-                "php": "~8.0.12 || ~8.1.0 || ~8.2.0",
-                "roave/signature": "^1.6"
-            },
-            "conflict": {
-                "thecodingmachine/safe": "<1.1.3"
-            },
-            "require-dev": {
-                "doctrine/coding-standard": "^10.0.0",
-                "phpstan/phpstan": "^1.8.5",
-                "phpstan/phpstan-phpunit": "^1.1.1",
-                "phpunit/phpunit": "^9.5.24",
-                "roave/infection-static-analysis-plugin": "^1.23.0",
-                "vimeo/psalm": "^4.27"
-            },
-            "suggest": {
-                "composer/composer": "Required to use the ComposerSourceLocator"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Roave\\BetterReflection\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "James Titcumb",
-                    "email": "james@asgrim.com",
-                    "homepage": "https://github.com/asgrim"
-                },
-                {
-                    "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com",
-                    "homepage": "https://ocramius.github.io/"
-                },
-                {
-                    "name": "Gary Hockin",
-                    "email": "gary@roave.com",
-                    "homepage": "https://github.com/geeh"
-                },
-                {
-                    "name": "Jaroslav Hanslík",
-                    "email": "kukulich@kukulich.cz",
-                    "homepage": "https://github.com/kukulich"
-                }
-            ],
-            "description": "Better Reflection - an improved code reflection API",
-            "support": {
-                "issues": "https://github.com/Roave/BetterReflection/issues",
-                "source": "https://github.com/Roave/BetterReflection/tree/5.11.1"
-            },
-            "time": "2022-09-29T16:28:39+00:00"
-        },
-        {
-            "name": "roave/signature",
-            "version": "1.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Roave/Signature.git",
-                "reference": "ed898589a3088217e6aa4f4a77d7b2b8f5e91a8a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Roave/Signature/zipball/ed898589a3088217e6aa4f4a77d7b2b8f5e91a8a",
-                "reference": "ed898589a3088217e6aa4f4a77d7b2b8f5e91a8a",
-                "shasum": ""
-            },
-            "require": {
-                "php": "7.4.*|8.0.*|8.1.*|8.2.*"
-            },
-            "require-dev": {
-                "doctrine/coding-standard": "^10.0.0",
-                "infection/infection": "^0.26.6",
-                "phpunit/phpunit": "^9.5.9",
-                "vimeo/psalm": "^4.27.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Roave\\Signature\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Sign and verify stuff",
-            "support": {
-                "issues": "https://github.com/Roave/Signature/issues",
-                "source": "https://github.com/Roave/Signature/tree/1.6.0"
-            },
-            "time": "2022-09-06T11:01:18+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -10056,36 +9971,34 @@
             "dist": {
                 "type": "path",
                 "url": "//home/tac/survos/survos/packages/maker-bundle",
-                "reference": "1f9afcf0f0cc33eebf8c574e1959dbc26452c634"
+                "reference": "86c5aba0656d44d0da207e46c2061eac3f39d24e"
             },
             "require": {
                 "php": "^8.1",
-                "roave/better-reflection": "^5.11",
-                "sebastian/diff": "^4.0",
                 "symfony/config": "^6.1.0",
                 "symfony/console": "^6.1.0",
                 "symfony/options-resolver": "^6.1.0",
                 "symfony/string": "^6.1.0",
-                "twig/twig": "^3.4",
-                "zenstruck/console-extra": "^1.1"
+                "symfony/workflow": "^6.1.0",
+                "twig/twig": "^3.4"
             },
             "conflict": {
-                "survos/api-grid-bundle": "<1.2.10",
-                "survos/auth-bundle": "<1.2.10",
-                "survos/barcode-bundle": "<1.2.10",
-                "survos/bootstrap-bundle": "<1.2.10",
-                "survos/core-bundle": "<1.2.10",
-                "survos/crawler-bundle": "<1.2.10",
-                "survos/doc-bundle": "<1.2.10",
-                "survos/faker-bundle": "<1.2.10",
+                "survos/api-grid-bundle": "<1.2.8",
+                "survos/auth-bundle": "<1.2.8",
+                "survos/barcode-bundle": "<1.2.8",
+                "survos/bootstrap-bundle": "<1.2.8",
+                "survos/core-bundle": "<1.2.8",
+                "survos/crawler-bundle": "<1.2.8",
+                "survos/doc-bundle": "<1.2.8",
+                "survos/faker-bundle": "<1.2.8",
                 "survos/first-package": "<1.2.7",
-                "survos/grid-bundle": "<1.2.10",
-                "survos/html-prettify-bundle": "<1.2.10",
-                "survos/inspection-bundle": "<1.2.10",
-                "survos/location-bundle": "<1.2.10",
+                "survos/grid-bundle": "<1.2.8",
+                "survos/html-prettify-bundle": "<1.2.8",
+                "survos/inspection-bundle": "<1.2.8",
+                "survos/location-bundle": "<1.2.8",
                 "survos/second-package": "<1.2.7",
-                "survos/tree-bundle": "<1.2.10",
-                "survos/workflow-helper-bundle": "<1.2.10"
+                "survos/tree-bundle": "<1.2.8",
+                "survos/workflow-helper-bundle": "<1.2.8"
             },
             "require-dev": {
                 "doctrine/doctrine-bundle": "^2.7",
@@ -10106,9 +10019,6 @@
                 "symfony/twig-bundle": "^6.1.0",
                 "symfony/validator": "^6.1.0",
                 "symfony/yaml": "^6.1.0"
-            },
-            "suggest": {
-                "symfony/workflow": "To generate a workflow from PHP constants"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -10697,17 +10607,101 @@
             "time": "2022-08-31T08:17:45+00:00"
         },
         {
-            "name": "symplify/easy-coding-standard",
-            "version": "11.1.9",
+            "name": "symfony/workflow",
+            "version": "v6.1.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symplify/easy-coding-standard.git",
-                "reference": "65341819f0f518b5f424a57736e9b0e9c5a9202f"
+                "url": "https://github.com/symfony/workflow.git",
+                "reference": "1ea9b264e33b6df69b96b5e16493b8ace5b17cf7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/easy-coding-standard/zipball/65341819f0f518b5f424a57736e9b0e9c5a9202f",
-                "reference": "65341819f0f518b5f424a57736e9b0e9c5a9202f",
+                "url": "https://api.github.com/repos/symfony/workflow/zipball/1ea9b264e33b6df69b96b5e16493b8ace5b17cf7",
+                "reference": "1ea9b264e33b6df69b96b5e16493b8ace5b17cf7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "conflict": {
+                "symfony/event-dispatcher": "<5.4"
+            },
+            "require-dev": {
+                "psr/log": "^1|^2|^3",
+                "symfony/dependency-injection": "^5.4|^6.0",
+                "symfony/event-dispatcher": "^5.4|^6.0",
+                "symfony/expression-language": "^5.4|^6.0",
+                "symfony/security-core": "^5.4|^6.0",
+                "symfony/validator": "^5.4|^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Workflow\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Grégoire Pineau",
+                    "email": "lyrixx@lyrixx.info"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides tools for managing a workflow or finite state machine",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "petrinet",
+                "place",
+                "state",
+                "statemachine",
+                "transition",
+                "workflow"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/workflow/tree/v6.1.3"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-07-11T16:07:52+00:00"
+        },
+        {
+            "name": "symplify/easy-coding-standard",
+            "version": "11.1.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symplify/easy-coding-standard.git",
+                "reference": "dc1c9c50059de9b0f51029a9446537f80bbf0c4e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symplify/easy-coding-standard/zipball/dc1c9c50059de9b0f51029a9446537f80bbf0c4e",
+                "reference": "dc1c9c50059de9b0f51029a9446537f80bbf0c4e",
                 "shasum": ""
             },
             "require": {
@@ -10737,7 +10731,7 @@
             ],
             "description": "Prefixed scoped version of ECS package",
             "support": {
-                "source": "https://github.com/symplify/easy-coding-standard/tree/11.1.9"
+                "source": "https://github.com/symplify/easy-coding-standard/tree/11.1.10"
             },
             "funding": [
                 {
@@ -10749,7 +10743,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-09-02T10:10:26+00:00"
+            "time": "2022-09-29T10:40:41+00:00"
         },
         {
             "name": "theseer/tokenizer",
@@ -10800,131 +10794,6 @@
                 }
             ],
             "time": "2021-07-28T10:34:58+00:00"
-        },
-        {
-            "name": "zenstruck/callback",
-            "version": "v1.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zenstruck/callback.git",
-                "reference": "eed9a532fd8974368e60c4a2550ed65eab7e5432"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zenstruck/callback/zipball/eed9a532fd8974368e60c4a2550ed65eab7e5432",
-                "reference": "eed9a532fd8974368e60c4a2550ed65eab7e5432",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2.5",
-                "symfony/polyfill-php80": "^1.14"
-            },
-            "require-dev": {
-                "symfony/phpunit-bridge": "^5.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Zenstruck\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kevin Bond",
-                    "email": "kevinbond@gmail.com"
-                }
-            ],
-            "description": "Callable wrapper to validate and inject arguments.",
-            "homepage": "https://github.com/zenstruck/callback",
-            "keywords": [
-                "callable",
-                "callback",
-                "utility"
-            ],
-            "support": {
-                "issues": "https://github.com/zenstruck/callback/issues",
-                "source": "https://github.com/zenstruck/callback/tree/v1.5.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/kbond",
-                    "type": "github"
-                }
-            ],
-            "time": "2022-08-31T14:56:15+00:00"
-        },
-        {
-            "name": "zenstruck/console-extra",
-            "version": "v1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zenstruck/console-extra.git",
-                "reference": "5dd6771b70dfe10a60346e8d3f9138cb8dc400b0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zenstruck/console-extra/zipball/5dd6771b70dfe10a60346e8d3f9138cb8dc400b0",
-                "reference": "5dd6771b70dfe10a60346e8d3f9138cb8dc400b0",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.4",
-                "symfony/console": "^4.4|^5.0|^6.0",
-                "symfony/deprecation-contracts": "^2.2|^3.0",
-                "symfony/polyfill-php80": "^1.15",
-                "symfony/string": "^5.0|^6.0",
-                "zenstruck/callback": "^1.4.2"
-            },
-            "require-dev": {
-                "phpdocumentor/reflection-docblock": "^5.2",
-                "phpstan/phpstan": "^1.4",
-                "symfony/framework-bundle": "^4.4|^5.0|^6.0",
-                "symfony/phpunit-bridge": "^5.3",
-                "symfony/process": "^4.4|^5.0|^6.0",
-                "symfony/var-dumper": "^4.4|^5.0|^6.0",
-                "zenstruck/console-test": "^1.3"
-            },
-            "suggest": {
-                "phpdocumentor/reflection-docblock": "To configure your Command's via class docblock."
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Zenstruck\\Console\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kevin Bond",
-                    "email": "kevinbond@gmail.com"
-                }
-            ],
-            "description": "A modular set of features to reduce configuration boilerplate for your Symfony commands.",
-            "homepage": "https://github.com/zenstruck/console-extra",
-            "keywords": [
-                "command",
-                "console",
-                "symfony"
-            ],
-            "support": {
-                "issues": "https://github.com/zenstruck/console-extra/issues",
-                "source": "https://github.com/zenstruck/console-extra/tree/v1.1.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/kbond",
-                    "type": "github"
-                }
-            ],
-            "time": "2022-07-12T14:47:51+00:00"
         }
     ],
     "aliases": [],
@@ -10941,5 +10810,5 @@
         "ext-iconv": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

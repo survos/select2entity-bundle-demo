@@ -282,6 +282,9 @@
             "templates/base.html.twig"
         ]
     },
+    "symfony/ux-twig-component": {
+        "version": "v2.4.0"
+    },
     "symfony/validator": {
         "version": "6.1",
         "recipe": {
@@ -336,6 +339,18 @@
             "config/packages/webpack_encore.yaml",
             "package.json",
             "webpack.config.js"
+        ]
+    },
+    "symfony/workflow": {
+        "version": "6.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "3.3",
+            "ref": "3b2f8ca32a07fcb00f899649053943fa3d8bbfb6"
+        },
+        "files": [
+            "config/packages/workflow.yaml"
         ]
     },
     "tetranz/select2entity-bundle": {
