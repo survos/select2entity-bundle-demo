@@ -8,14 +8,15 @@
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
 
-require('jquery');
-require('select2');
-require('bootstrap');
-require('../vendor/tetranz/select2entity-bundle/Resources/public/js/select2entity.js');
+import 'jquery';
+import 'select2';
+import 'bootstrap';
+
+// require('../vendor/tetranz/select2entity-bundle/Resources/public/js/select2entity.js');
 
 // initialize the select2 elements.
 // $('.js-select')
 
 
 // start the Stimulus application
-import './bootstrap';
+import './bootstrap.js';

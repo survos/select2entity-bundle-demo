@@ -15,7 +15,6 @@ class Country implements \Stringable, RouteParametersInterface {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Core\Unique]
     private ?int $id = null;
 
     #[ORM\Column(length: 55)]
