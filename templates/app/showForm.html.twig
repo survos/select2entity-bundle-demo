@@ -2,6 +2,18 @@
 
 {% block title %}Select2 Form Examples{% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <script type="module">
+        import jQuery from 'jquery';
+        window.jQuery = jQuery;
+
+        import '@tetranz/select2entity-bundle'
+
+    </script>
+{#    <script src="{{ asset('bundles/tetranzselect2entity/js/select2entity.js') }}"></script>#}
+{% endblock %}
+
 {% block body %}
 
     <div class="container">

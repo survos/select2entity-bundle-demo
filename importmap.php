@@ -41,6 +41,11 @@ return [
         'version' => '4.1.0-rc.0',
         'type' => 'css',
     ],
+
+    '@tetranz/select2entity-bundle' => [
+        'path' => './vendor/tetranz/select2entity-bundle/Resources/public/js/select2entity.js',
+    ],
+
     '@symfony/stimulus-bundle' => [
         'path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js',
     ],
