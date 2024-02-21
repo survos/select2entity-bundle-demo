@@ -9,8 +9,10 @@
 import './styles/app.css';
 
 import $ from 'jquery';
-// $.jQuery = jQuery;
-// window.jQuery = jQuery;
+// things on "window" become global variables
+window.$ = $;
+window.jQuery = $;
+
 import 'select2';
 import 'bootstrap';
 
@@ -24,3 +26,5 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 // start the Stimulus application
 import './bootstrap.js';
+
+

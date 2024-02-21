@@ -5,13 +5,12 @@
 {% block javascripts %}
     {{ parent() }}
     <script type="module">
-        import jQuery from 'jquery';
-        window.jQuery = jQuery;
-
-        import '@tetranz/select2entity-bundle'
-
+        import $ from 'jquery';
+        // things on "window" become global variables
+        window.$ = $;
+        window.jQuery = $;
     </script>
-{#    <script src="{{ asset('bundles/tetranzselect2entity/js/select2entity.js') }}"></script>#}
+    <script src="{{ asset('bundles/tetranzselect2entity/js/select2entity.js') }}"></script>
 {% endblock %}
 
 {% block body %}
@@ -20,7 +19,6 @@
 
         <h2>{{ formClass }}</h2>
         <a href="{{ path('app_index') }}">List All Examples</a>
-        <a href="{{ path('app_make_method') }}">Make Method DEBUG</a>
 
 
         {% if errorMessage %}
