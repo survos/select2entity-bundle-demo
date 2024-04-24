@@ -1,6 +1,9 @@
 {
     "type": "project",
     "license": "proprietary",
+    "name": "survos/select-entity-bundle-demo",
+    "description": "Symfony demo of https://github.com/tetranz/select2entity-bundle",
+    "keywords": ["symfony", "select-entity"],
     "minimum-stability": "beta",
     "prefer-stable": true,
     "require": {
