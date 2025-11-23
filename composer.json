@@ -4,7 +4,7 @@
     "name": "survos/select-entity-bundle-demo",
     "description": "Symfony demo of https://github.com/tetranz/select2entity-bundle",
     "keywords": ["symfony", "select-entity"],
-    "minimum-stability": "beta",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
         "php": ">=8.1",
@@ -107,7 +107,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "^6.4"
+            "require": "^7.3"
         }
     },
     "require-dev": {
